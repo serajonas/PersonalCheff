@@ -46,9 +46,9 @@ Ir na Linha 106 = LANGUAGE_CODE = 'pt-br'
 Abri o Arquivo 'settings.py' e
 Ir na Linha 108 TIME_ZONE = 'America/Sao_Paulo'
 ```
-- [ ] Criar o app receitas
-- [ ] Registrar o app receitas
-- [ ] Configurar a rota inicial(index)
+- [X] Criar o app receitas
+- [X] Registrar o app receitas
+- [X] Configurar a rota inicial(index)
 - [ ] Criar a view para a rota inicial
 - [ ] Registrar a rota inicial
 - [ ] Criar o arquivo index
