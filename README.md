@@ -20,7 +20,10 @@ Segue a lista de tarefas a serem desenvolvidas no projeto:
 python -m venv.\venv\
 venv\Scripts\activate
 ``` 
-- [ ] Instalar o Django
+- [X] Instalar o Django
+``` 
+python -m pip install django==3.2 
+```
 - [ ] Criar o projeto PersonalCheff
 - [ ] Subir o servidor e testar o projeto
 - [ ] Alterar o idioma do projeto para `pt-br`
