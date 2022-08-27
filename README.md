@@ -29,9 +29,23 @@ python -m pip install django==3.2
 django-admin.py help
 django-admin.py startproject PersonalCheffProj
 ```
-- [ ] Subir o servidor e testar o projeto
-- [ ] Alterar o idioma do projeto para `pt-br`
-- [ ] Alterar o timezone do projeto para `America/Sao_Paulo`
+- [X] Subir o servidor e testar o projeto
+```
+Entrar na Pasta do Projeto
+cd PersonalCheffProj
+executar o projeto no servidor
+python manager.py runserver
+```
+- [X] Alterar o idioma do projeto para `pt-br`
+```
+Abri o Arquivo 'settings.py' e
+Ir na Linha 106 = LANGUAGE_CODE = 'pt-br'
+```
+- [X] Alterar o timezone do projeto para `America/Sao_Paulo`
+```
+Abri o Arquivo 'settings.py' e
+Ir na Linha 108 TIME_ZONE = 'America/Sao_Paulo'
+```
 - [ ] Criar o app receitas
 - [ ] Registrar o app receitas
 - [ ] Configurar a rota inicial(index)
