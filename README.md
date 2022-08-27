@@ -6,3 +6,12 @@
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 <img src="exemplo-image.png" alt="exemplo imagem">
 > <APP para gerenciamento de Receitas>
+### Lista de tarefas
+Segue a lista de tarefas a serem desenvolvidas no projeto:
+- [X] Pré-requisitos
+    - [X] Instalar o Python
+    - [X] Instalar Visual Studio Code
+
+## 📝 Licença
+Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+[⬆ Voltar ao topo](#nome-do-projeto)<br>
