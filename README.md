@@ -24,7 +24,11 @@ venv\Scripts\activate
 ``` 
 python -m pip install django==3.2 
 ```
-- [ ] Criar o projeto PersonalCheff
+- [X] Criar o projeto PersonalCheff
+```
+django-admin.py help
+django-admin.py startproject PersonalCheffProj
+```
 - [ ] Subir o servidor e testar o projeto
 - [ ] Alterar o idioma do projeto para `pt-br`
 - [ ] Alterar o timezone do projeto para `America/Sao_Paulo`
