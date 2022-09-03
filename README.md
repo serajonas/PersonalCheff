@@ -91,6 +91,11 @@ urlpatterns = [
 ]
 ```
 - [ ] Criar o arquivo index
+    - Dentro da pasta receitas(app),crie a pasta 'templates'
+    - Dentro da pasta ´templates´ crie seus arquivos HTML
+    começando pelo "index.html"
+    - No arquivo views.py que esta dentro da pasta do app
+    faça a seguinte alterações de código:
 
 ## 📝 Licença
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
