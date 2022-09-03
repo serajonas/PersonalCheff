@@ -47,10 +47,49 @@ Abri o Arquivo 'settings.py' e
 Ir na Linha 108 TIME_ZONE = 'America/Sao_Paulo'
 ```
 - [X] Criar o app receitas
+```
+* preciso estar dentro da pasta do projeto (PersonalcheffProj)
+python manage.py startapp receitas
+```
 - [X] Registrar o app receitas
+```
+no arquivo settings.py adicionar o app receitas na lista de apps 
+INSTALLED_APPS[
+    ...
+    'receitas',
+]
+```
 - [X] Configurar a rota inicial(index)
-- [ ] Criar a view para a rota inicial
-- [ ] Registrar a rota inicial
+# Dentro da pasta receita(app) criar o arquivo urls.py
+# no arquivo urls.py
+```
+from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('', views.index, name='index')
+    ]
+```
+- [X] Criar a view para a rota inicial
+# Dentro da pasta receitas(app) abrir o arquivo views.py
+```    
+    from django.shortcuts import render
+    from django.http import HttpResponse
+
+    def index(request):
+        return HttpResponse("<h1>Seja bem vindo</h1>")
+```        
+- [X] Registrar a rota inicial
+# Dentro da pasta PersonalCheffProj(app) abrir o arquivo urls.py
+```
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include('receitas.urls')),
+]
+```
 - [ ] Criar o arquivo index
 
 ## 📝 Licença
