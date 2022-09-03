@@ -60,8 +60,8 @@ INSTALLED_APPS[
 ]
 ```
 - [X] Configurar a rota inicial(index)
-# Dentro da pasta receita(app) criar o arquivo urls.py
-# no arquivo urls.py
+- Dentro da pasta receita(app) criar o arquivo urls.py
+- no arquivo urls.py
 ```
 from django.urls import path
     from . import views
@@ -71,7 +71,7 @@ from django.urls import path
     ]
 ```
 - [X] Criar a view para a rota inicial
-# Dentro da pasta receitas(app) abrir o arquivo views.py
+- Dentro da pasta receitas(app) abrir o arquivo views.py
 ```    
     from django.shortcuts import render
     from django.http import HttpResponse
@@ -80,7 +80,7 @@ from django.urls import path
         return HttpResponse("<h1>Seja bem vindo</h1>")
 ```        
 - [X] Registrar a rota inicial
-# Dentro da pasta PersonalCheffProj(app) abrir o arquivo urls.py
+- Dentro da pasta PersonalCheffProj(app) abrir o arquivo urls.py
 ```
 from django.contrib import admin
 from django.urls import path, include
