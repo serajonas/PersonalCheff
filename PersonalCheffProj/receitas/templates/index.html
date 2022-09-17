@@ -1,29 +1,45 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PersonalCheff</title>
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+    <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
 </head>
 <body>
-    <h1>🧑‍🍳👩‍🍳Personal Cheff</h1>
-    <h2>🥪🍗🍱🍣 Seu Site de Receitas 🥪🍗🍱🍣 </h2>
-    <marquee> Seja bem-vindo ao Site de Receitas mais atualizado da Internet - Receitas online e grátis <br></marquee>
-    <table border="1" bgcolor="#00ffee">
+    <h1>
+        <img src="{% static 'logo.png' %}" class="imagem-logo">
+        PersonalCheff
+    </h1>
+    <h2>Seu site de receitas</h2>
+
+    <table border="1" class="tabela-receitas">
         <tr>
-            <th> Receitas</th>
-            <th> Videos</th>
-            <th> Ações</th>
+            <th>Receita</th>
+            <th>Vídeo</th>
+            <th>Ações</th>
         </tr>
         <tr>
-            <td> Suco de Laranja</td>
-            <td> https://www.youtube.com/watch?v=Nn9140bDPnc</td>
-            <td><a href="sucodelaranja"> Ver receita Completa</a></td>
+            <td>
+                <img src="{% static 'suco.png' %}" class="icone-suco">
+                Suco de laranja
+            </td>
+            <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
+            <td><a href="sucodelaranja">Ver receita completa</a></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="{% static 'suco.png' %}" class="icone-suco">
+                Suco de limão
+            </td>
+            <td>https://www.youtube.com/watch?v=7aavIewcSY4</td>
+            <td>
+                <a href="sucodelimao">Ver receita completa</a>
+            </td>
         </tr>
     </table>
-    
-    <img src="root\logo.png" alt=" personalcheff ">
-
 </body>
 </html>
