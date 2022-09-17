@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content%}
+{% include 'partials/header.html' %}
+
 
     <table border="1" class="tabela-receitas">
         <tr>
@@ -28,5 +29,5 @@
             </td>
         </tr>
     </table>
-    
+    {% include 'partials/footer.html' %}
     {% endblock %}
