@@ -1,12 +1,8 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block content%}
-{% include 'partials/header.html' %}
-{% include 'partials/menu.html' %}
-<footer>
-    <p>
-        <a href="index.html">Home</a>
-        <a href="contato.html">Contato</a>
-    </p>
-</footer>
-{% endblock %}
+<nav class="nav">
+    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">HOME</a>
+    <a class="nav-link" href="{% url 'contato' %}">CONTATO</a>
+    <a class="nav-link" href="#">RECEITAS</a>
+    <a class="nav-link disabled">DONATIVOS</a>
+  </nav>
+  
