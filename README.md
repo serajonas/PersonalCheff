@@ -114,13 +114,91 @@ INSTALLED_APPS[
         - após realizar essas configurações execute, no terminal, o comando `python manage.py collectstatic`
         - na primeira linha do arquivo `index.html` insira `{% load static %}`. Esse comando deve ser usado em todos os arquivos em que você for utilizar arquivos estáticos.
         - insira uma imagem utilizando o comando `<img src="{% static 'logo.png' %}">`. Sempre que for utilizar um arquivo estático você deve utilizar `{% static 'nome-do-arquivo' %}`
-- [ ] Utilizando links
-- [ ] Criando o base.html
-- [ ] Separando em partials
-- [ ] Renderizando dados dinamicamente
-- [ ] Criando um dicionario com as receitas
-- [ ] Criando o banco de dados(MySQL/MariaDB)
-- [ ] Instalando o conector do bando de dados MySQL
+- [X] Utilizando links
+    - para criar um link para a página index, independente de onde você esteja utilize o comando `url`:
+        ```python
+        <a href="{% url 'index' %}">Página inicial</a>
+        ```
+- [X] Criando o base.html
+    - na pasta `templates`crie o arquivo `base.html`. Esse arquivo contém todo o código de estrutura comum à todas as páginas. Nesse arquivo deve ficar tudo que tiver antes do `body` e tudo que tiver depois do `/body`.
+    - nesse arquivo deve conter o `{% load static %}`
+    - nesse arquivo, no local aonde será carregado o conteúdo das outras páginas, deve existir os delimitadores `{% block content %}` e `{% endblock %}`
+    - o código do `base.html` será algo parecido com:
+        ```python
+        {% load static %}
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>PersonalCheff</title>
+            <link rel="stylesheet" href="{% static 'estilos.css' %}">
+            <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
+        </head>
+        <body>
+        {% block content %}
+        
+        {% endblock %}
+        </body>
+        </html>
+        ```
+- [X] Separando em partials
+    - criar uma pasta chamada `partials` dentro da pasta `templates`
+    - dentro da pasta `partials`crie os arquivos que serão as **partes globais** utilizadas no seu projeto como `header.html`, `footer.html`, `menu.html`, `side-bar.html`, `banner.html`, etc. No nosso exemplo criamos as partials `header.html` e `footer.html`
+    - insira em cada um dos arquivos partials seus códigos correspondentes. Exemplo:  no arquivo `header.html` eu insiro todo o conteúdo que eu quero que seja apresentado no cabeçalho da minha aplicação. Não se esqueça do comando `{% load static %}`.
+    - para incluir as partials nos arquivos de destino utilize o comando `include` da seguinte maneira: `{% include 'partials/header.html' %}`
+- [X] Renderizando dados dinamicamente
+    - Trocar as informações fixas no arquivo html por informações dinâmicas vindas do arquivo python. 
+    - Quero gerar a lista de receitas de foram dinâmica, vamos fazer isso utilizando o recurso do Django que passa uma informação para minhas templates(.html) através da passagem de uma parâmetro no comando `render` que está em minha view(.py):
+        ```python
+        return render(request,'index.html', {'nome_da_receita':'suco de laranja'})
+        ```
+    - Observer que passei através do comando `render` um `dicionário` para a template. Na minha template(`index.html`) eu posso exibir o conteúdo desse dicionário da seguinte forma:
+        ```python
+        <td><img src="{% static 'suco.png' %}" class="icone-suco">
+            {{nome_da_receita}}</td>
+        ```
+    - Vale a pena diferenciar o uso de `{{ }}` e `{% %}`:
+        - `{{ }}` é utilizado normalmente para exibir o valor de variáveis, para mostrar informação em tela
+        - `{% %}` é utilizado para o processamento de informações, usamos esses delimitadores quando precisamos de `if` ou `for`por exemplo.
+- [X] Criando um dicionario com as receitas
+    - No arquivo `views.py` vamos criar um dicionário com as receitas, modifique a função `index` da seguinte forma:
+        ```python
+        def index(request):
+            receitas = {
+                1:'Suco de Melão',
+                2:'Pizza',
+                3:'Suco de Limão',
+            }
+            
+            dados = {
+                'lista_receitas' : receitas
+            }
+            
+            return render(request,'index.html', dados)
+        ```
+    - na template `index.html`, eu faço um laço de repetição que verifique cada item da lista de receitas à cada passagem do laço:
+        ```python
+        {% for chave, uma_receita in lista_receitas.items %}
+            <tr>
+                <td>
+                    <img src="{% static 'suco.png' %}" class="icone-suco">
+                    {{uma_receita}}
+                </td>
+                <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
+                <td><a href="{% url 'sucodelaranja' %}" class="btn btn-info">Ver receita completa</a></td>
+            </tr>
+        {% endfor %}
+        ```
+- [X] Criando o banco de dados(MySQL/MariaDB)
+    - Abra o XAMPP e start os serviços do Apache e MySQL
+    - Click no botão admin do Apache
+    - Acesse o link PHPMyAdmin
+    - Dentro do PHPMyAdmin, click no botão `novo` para criar um banco de dados, insira o nome `personalcheff_bd`
+- [X] Instalando o conector do bando de dados MySQL
+    - `pip install mysqlclient`
+- [ ] Configurar a conexão com mysql
 - [ ] Criando o modelo da receita
 - [ ] Criando a migration (mapeamento)
 - [ ] Realizando a migration
